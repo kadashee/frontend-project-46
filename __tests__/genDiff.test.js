@@ -13,7 +13,7 @@ test('genDiff compares 2 flat JSONs correctly', () => {
 const file1 = parseFile(getFixturePath('file1.json'));
 const file2 = parseFile(getFixturePath('file2.json'));
 
-const expected = '{
+const expected = `{
     - follow: false
     host: hexlet.io
     - proxy: 123.234.53.22
@@ -21,7 +21,7 @@ const expected = '{
     + timeout: 20
     + verbose: true
 }
-';
+`;
 
 expect(genDiff(file1, file2)).toBe(expected);
 
