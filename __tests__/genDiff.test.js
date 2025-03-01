@@ -20,8 +20,7 @@ const expected = `{
   - timeout: 50
   + timeout: 20
   + verbose: true
-}
-`;
+}`;
 
 expect(genDiff(file1, file2)).toBe(expected);
 
