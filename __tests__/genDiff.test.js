@@ -25,3 +25,21 @@ const expected = `{
 expect(genDiff(file1, file2)).toBe(expected);
 
 })
+
+test('genDiff compares 2 flat YML files correctly', () => {
+    const file1 = parseFile(getFixturePath('file1.yml'));
+    const file2 = parseFile(getFixturePath('file2.yml'));
+
+    const expected = `{
+  - follow: false
+    host: hexlet.io
+  - proxy: 123.234.53.22
+  - timeout: 50
+  + timeout: 20
+  + verbose: true
+}`;
+
+    expect(genDiff(file1, file2)).toBe(expected);
+
+})
+

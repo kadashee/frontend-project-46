@@ -5,3 +5,10 @@
 [![CI](https://github.com/kadashee/frontend-project-46/actions/workflows/ci.yml/badge.svg)](https://github.com/kadashee/frontend-project-46/actions/workflows/ci.yml)
 
 [![asciicast](https://asciinema.org/a/vIdOVORLm6Ukuh6TIzNbSKG10.svg)](https://asciinema.org/a/vIdOVORLm6Ukuh6TIzNbSKG10)
+
+[![asciicast](https://asciinema.org/a/odiVe53ikqUtj9jcCLJihbMxE.svg)](https://asciinema.org/a/odiVe53ikqUtj9jcCLJihbMxE)
+
+## Возможности
+
+- Поддержка различных форматов входных файлов: JSON, YAML
+- Генерация отчета о различиях в разных форматах
