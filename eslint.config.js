@@ -12,7 +12,9 @@ export default [
     },
   },
   {
-    plugins: ["jest"],
+    plugins: {
+      jest: pluginJest,
+    },
     extends: ["plugin:jest/recommended"],
   },
   pluginJs.configs.recommended,
