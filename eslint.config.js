@@ -1,21 +1,29 @@
-import globals from "globals";
-import pluginJs from "@eslint/js";
-import pluginJest from "eslint-plugin-jest";
+import globals from 'globals'
+import pluginJs from '@eslint/js'
+import tseslint from 'typescript-eslint'
+import stylistic from '@stylistic/eslint-plugin'
+import { Linter } from 'eslint'
 
 export default [
+  stylistic.configs.recommended,
+  pluginJs.configs.recommended,
+  ...tseslint.configs.recommendedTypeChecked,
+  ...tseslint.configs.stylisticTypeChecked,
+  {
+    files: [
+      '**/*.{js,ts,tsx}',
+    ],
+  },
   {
     languageOptions: {
-      globals: {
-        ...globals.node,
-        jest: true,
+      globals: globals.node,
+      parserOptions: {
+        projectService: true,
+        tsconfigRootDir: import.meta.dirname,
       },
     },
-  },
-  {
-    plugins: {
-      jest: pluginJest,
+    rules: {
+      '@typescript-eslint/no-unused-vars': 'off',
     },
-    extends: ["plugin:jest/recommended"],
   },
-  pluginJs.configs.recommended,
-];
+] // satisfies Linter.Config[]
