@@ -10,8 +10,5 @@ export default [
         jest: true,
       },
     },
-    rules: {
-      'no-unused-vars': 'warn',
-    },
   },
 ];
