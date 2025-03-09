@@ -1,3 +1,4 @@
+import parseFile from '../src/file-parser.js';
 import { fileURLToPath } from 'url';
 import path, { dirname } from 'path';
 import fs from 'fs';
@@ -12,12 +13,16 @@ test('сравнение JSON файлов', () => {
     const filepath1 = getFixturePath('file1.json');
     const filepath2 = getFixturePath('file2.json');
     const expectedStylish = readFile('expected-stylish.txt');
-    expect(genDiff(filepath1, filepath2)).toEqual(expectedStylish);
+    const obj1 = parseFile(filepath1);
+    const obj2 = parseFile(filepath2);
+    expect(genDiff(obj1, obj2)).toEqual(expectedStylish);
 });
 
 test('сравнение YAML файлов', () => {
     const filepath1 = getFixturePath('file1.yml');
     const filepath2 = getFixturePath('file2.yml');
     const expectedStylish = readFile('expected-stylish.txt');
-    expect(genDiff(filepath1, filepath2)).toEqual(expectedStylish);
+    const obj1 = parseFile(filepath1);
+    const obj2 = parseFile(filepath2);
+    expect(genDiff(obj1, obj2)).toEqual(expectedStylish);
 });
