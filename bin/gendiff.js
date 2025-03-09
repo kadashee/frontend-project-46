@@ -11,13 +11,13 @@ program
     .helpOption('-h, --help', 'output usage information')
     .argument('<filepath1>')
     .argument('<filepath2>')
-    .option('-f, --format [type]', 'output format', 'stylish');
+    .option('-f, --format [type]', 'output format (stylish, plain)', 'stylish');
 
-program.action((filepath1, filepath2) => {
+program.action((filepath1, filepath2, options) => {
     const obj1 = parseFile(filepath1);
     const obj2 = parseFile(filepath2);
 
-    console.log(genDiff(obj1, obj2));
+    console.log(genDiff(obj1, obj2, options.format));
 });
 
 program.parse()

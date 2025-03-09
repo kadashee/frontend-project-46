@@ -26,3 +26,13 @@ test('сравнение YAML файлов', () => {
     const obj2 = parseFile(filepath2);
     expect(genDiff(obj1, obj2)).toEqual(expectedStylish);
 });
+
+test('genDiff with plain formatter', () => {
+    const file1Path = getFixturePath('file1.json');
+    const file2Path = getFixturePath('file2.json');
+    const expected = readFile('expected-plain.txt');
+    const obj1 = parseFile(file1Path);
+    const obj2 = parseFile(file2Path);
+
+    expect(genDiff(obj1, obj2, 'plain')).toEqual(expected);
+});

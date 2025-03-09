@@ -9,6 +9,8 @@
 [![asciicast](https://asciinema.org/a/odiVe53ikqUtj9jcCLJihbMxE.svg)](https://asciinema.org/a/odiVe53ikqUtj9jcCLJihbMxE)
 
 [![asciicast](https://asciinema.org/a/VuFANAb9YhBMopS9KZMaPAST9.svg)](https://asciinema.org/a/VuFANAb9YhBMopS9KZMaPAST9)
+
+[![asciicast](https://asciinema.org/a/Hdqx1CRO1Tq1RuNIkeD9ewsfE.svg)](https://asciinema.org/a/Hdqx1CRO1Tq1RuNIkeD9ewsfE)
 ## Возможности
 
 - Поддержка различных форматов входных файлов: JSON, YAML
