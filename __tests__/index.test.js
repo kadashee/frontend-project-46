@@ -11,13 +11,13 @@ const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8'
 test('сравнение JSON файлов', () => {
     const filepath1 = getFixturePath('file1.json');
     const filepath2 = getFixturePath('file2.json');
-    const expectedStylish = readFile('expected_stylish.txt');
+    const expectedStylish = readFile('expected-stylish.txt');
     expect(genDiff(filepath1, filepath2)).toEqual(expectedStylish);
 });
 
 test('сравнение YAML файлов', () => {
     const filepath1 = getFixturePath('file1.yml');
     const filepath2 = getFixturePath('file2.yml');
-    const expectedStylish = readFile('expected_stylish.txt');
+    const expectedStylish = readFile('expected-stylish.txt');
     expect(genDiff(filepath1, filepath2)).toEqual(expectedStylish);
 });
