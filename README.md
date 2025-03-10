@@ -44,16 +44,28 @@ ___________________________
 # Примеры использования
 
 _____________________________
-[![asciicast](https://asciinema.org/a/vIdOVORLm6Ukuh6TIzNbSKG10.svg)](https://asciinema.org/a/vIdOVORLm6Ukuh6TIzNbSKG10)
 
-[![asciicast](https://asciinema.org/a/odiVe53ikqUtj9jcCLJihbMxE.svg)](https://asciinema.org/a/odiVe53ikqUtj9jcCLJihbMxE)
+### Сравнение плоских JSON файлов (формат stylish)
+Cравнение двух JSON файлов с простой структурой. Вывод в формате по умолчанию.
 
-[![asciicast](https://asciinema.org/a/VuFANAb9YhBMopS9KZMaPAST9.svg)](https://asciinema.org/a/VuFANAb9YhBMopS9KZMaPAST9)
+[![asciicast](https://asciinema.org/a/EebwDLzo6aSaeg7p6uLRx155X.svg)](https://asciinema.org/a/EebwDLzo6aSaeg7p6uLRx155X)
 
-[![asciicast](https://asciinema.org/a/Hdqx1CRO1Tq1RuNIkeD9ewsfE.svg)](https://asciinema.org/a/Hdqx1CRO1Tq1RuNIkeD9ewsfE)
+### Сравнение плоских YAML файлов (формат stylish)
+Демонстрация работы с YAML файлами. Вывод в формате по умолчанию.
 
-[![asciicast](https://asciinema.org/a/8lhiilZzQaEoZecIq6HTXveNs.svg)](https://asciinema.org/a/8lhiilZzQaEoZecIq6HTXveNs)
-## Возможности
+[![asciicast](https://asciinema.org/a/f3sMpuBQUFHGR6wl1RzWf5mCB.svg)](https://asciinema.org/a/f3sMpuBQUFHGR6wl1RzWf5mCB)
 
-- Поддержка различных форматов входных файлов: JSON, YAML
-- Генерация отчета о различиях в разных форматах
+### Рекурсивное сравнение (формат stylish)
+Сравнение вложенных структур с отображением изменений на всех уровнях вложенности.
+
+[![asciicast](https://asciinema.org/a/PDQCGPV8BIZwm2IyvtRFawaYS.svg)](https://asciinema.org/a/PDQCGPV8BIZwm2IyvtRFawaYS)
+
+### Вывод в формате plain
+Текстовый формат вывода, показывающий изменения в виде описаний: что добавлено, удалено или изменено.
+
+[![asciicast](https://asciinema.org/a/QeJrtnXnw5ZYdJmFRgYP5ZUh7.svg)](https://asciinema.org/a/QeJrtnXnw5ZYdJmFRgYP5ZUh7)
+
+### Вывод в формате JSON
+Вывод различий в формате JSON.
+
+[![asciicast](https://asciinema.org/a/mrRZ6O5Ud8EwP51awDacFAS3J.svg)](https://asciinema.org/a/mrRZ6O5Ud8EwP51awDacFAS3J)
