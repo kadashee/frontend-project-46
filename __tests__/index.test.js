@@ -1,6 +1,6 @@
-import {test, expect} from '@jest/globals';
-import {fileURLToPath} from 'url';
-import path, {dirname} from 'path';
+import { test, expect } from '@jest/globals';
+import { fileURLToPath } from 'url';
+import path, { dirname } from 'path';
 import fs from 'fs';
 import genDiff from '../src/genDiff.js';
 import parseFile from '../src/file-parser.js';

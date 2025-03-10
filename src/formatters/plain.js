@@ -32,9 +32,9 @@ const plain = (diff, ancestry = '') => {
   };
 
   return diff
-      .filter((node) => node.type !== 'unchanged')
-      .map(formatNode)
-      .join('\n');
+    .filter((node) => node.type !== 'unchanged')
+    .map(formatNode)
+    .join('\n');
 };
 
 export default plain;

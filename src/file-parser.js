@@ -5,7 +5,7 @@ import yaml from 'js-yaml';
 const parseFile = (filePath) => {
   const absolutePath = path.resolve(process.cwd(), filePath);
   const data = fs.readFileSync(absolutePath, 'utf-8');
-  const format = path.extname(filePath)
+  const format = path.extname(filePath);
 
   switch (format) {
     case '.json':
@@ -16,6 +16,6 @@ const parseFile = (filePath) => {
     default:
       throw new Error(`Unsupported file format: ${format}`);
   }
-}
+};
 
 export default parseFile;
