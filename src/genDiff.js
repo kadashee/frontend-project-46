@@ -1,7 +1,15 @@
 import buildDiff from './buildDiff.js';
-import formatters from './formatters/index.js';
+import stylish from './formatters/stylish.js';
+import plain from './formatters/plain.js';
+import json from './formatters/json.js';
 
 const genDiff = (obj1, obj2, format = 'stylish') => {
+    const formatters = {
+        stylish,
+        plain,
+        json,
+    };
+
     if (!formatters[format]) {
         throw new Error(`Unsupported format: ${format}`);
     }
