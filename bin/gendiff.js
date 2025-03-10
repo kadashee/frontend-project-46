@@ -20,6 +20,4 @@ program.action((filepath1, filepath2, options) => {
     console.log(genDiff(obj1, obj2, options.format));
 });
 
-program.parse()
-
 export default program;
