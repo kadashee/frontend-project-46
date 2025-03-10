@@ -1,9 +1,11 @@
-import stylish from './stylish.js';
-import plain from './plain.js';
-import json from './json.js';
+import formatStylish from './stylish.js';
+import formatPlain from './plain.js';
+import formatJson from './json.js';
 
-export default {
-    stylish,
-    plain,
-    json,
+const formatters = {
+    stylish: formatStylish,
+    plain: formatPlain,
+    json: formatJson,
 };
+
+export default formatters;
