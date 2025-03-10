@@ -1,13 +1,5 @@
 import buildDiff from './buildDiff.js';
-import formatStylish from './formatters/stylish.js';
-import formatPlain from './formatters/plain.js';
-import formatJson from './formatters/json.js';
-
-const formatters = {
-    stylish: formatStylish,
-    plain: formatPlain,
-    json: formatJson,
-};
+import formatters from './formatters/index.js';
 
 const genDiff = (obj1, obj2, format = 'stylish') => {
     if (!formatters[format]) {
