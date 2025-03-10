@@ -36,3 +36,13 @@ test('genDiff with plain formatter', () => {
 
     expect(genDiff(obj1, obj2, 'plain')).toEqual(expected);
 });
+
+test('genDiff with json formatter', () => {
+    const file1Path = getFixturePath('file1.json');
+    const file2Path = getFixturePath('file2.json');
+    const expected = readFile('expected-json.txt');
+    const obj1 = parseFile(file1Path);
+    const obj2 = parseFile(file2Path);
+
+    expect(genDiff(obj1, obj2, 'json')).toEqual(expected);
+});
