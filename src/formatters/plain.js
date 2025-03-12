@@ -13,13 +13,13 @@ const stringify = (value) => {
   return '[complex value]';
 };
 
-const plain = (diff, ancestry = '') => {
+const formatPlain = (diff, ancestry = '') => {
   const formatNode = (node) => {
     const path = ancestry ? `${ancestry}.${node.key}` : node.key;
 
     switch (node.type) {
       case 'nested':
-        return plain(node.children, path);
+        return formatPlain(node.children, path);
       case 'added':
         return `Property '${path}' was added with value: ${stringify(node.value)}`;
       case 'deleted':
@@ -37,4 +37,4 @@ const plain = (diff, ancestry = '') => {
     .join('\n');
 };
 
-export default plain;
+export default formatPlain;
