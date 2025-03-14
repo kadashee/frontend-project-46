@@ -13,7 +13,7 @@ const stringify = (value) => {
   return '[complex value]';
 };
 
-const formatPlain = (diff, ancestry = '') => {
+const formatPlain = (data, ancestry = '') => {
   const formatNode = (node) => {
     const path = ancestry ? `${ancestry}.${node.key}` : node.key;
 
@@ -25,13 +25,13 @@ const formatPlain = (diff, ancestry = '') => {
       case 'deleted':
         return `Property '${path}' was removed`;
       case 'changed':
-        return `Property '${path}' was updated. From ${stringify(node.oldValue)} to ${stringify(node.newValue)}`;
+        return `Property '${path}' was updated. From ${stringify(node.value1)} to ${stringify(node.value2)}`;
       default:
         return '';
     }
   };
 
-  return diff
+  return data
     .filter((node) => node.type !== 'unchanged')
     .map(formatNode)
     .join('\n');

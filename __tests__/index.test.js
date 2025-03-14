@@ -9,7 +9,6 @@ const __dirname = dirname(__filename);
 const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
 const readFixture = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8').trim();
 
-// Читаем ожидаемые результаты до начала тестов
 const expectedStylish = readFixture('expected-stylish.txt');
 const expectedPlain = readFixture('expected-plain.txt');
 const expectedJson = readFixture('expected-json.txt');

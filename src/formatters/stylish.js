@@ -22,11 +22,11 @@ const stringify = (value, depth) => {
   return `{\n${lines.join('\n')}\n${bracketIndent}}`;
 };
 
-const formatStylish = (diff, depth = 1) => {
+const formatStylish = (data, depth = 1) => {
   const spacesCount = 4;
   const indent = ' '.repeat((depth - 1) * spacesCount);
 
-  const lines = diff.map((node) => {
+  const result = data.map((node) => {
     const { key, type } = node;
 
     switch (type) {
@@ -40,14 +40,14 @@ const formatStylish = (diff, depth = 1) => {
         return `${indent}  + ${key}: ${stringify(node.value, depth + 1)}`;
       case 'changed':
         return [
-          `${indent}  - ${key}: ${stringify(node.oldValue, depth + 1)}`,
-          `${indent}  + ${key}: ${stringify(node.newValue, depth + 1)}`,
+          `${indent}  - ${key}: ${stringify(node.value1, depth + 1)}`,
+          `${indent}  + ${key}: ${stringify(node.value2, depth + 1)}`,
         ].join('\n');
       default:
         throw new Error(`Неизвестный тип узла: ${type}`);
     }
   });
-  return `{\n${lines.join('\n')}\n${indent}}`;
+  return `{\n${result.join('\n')}\n${indent}}`;
 };
 
 export default formatStylish;

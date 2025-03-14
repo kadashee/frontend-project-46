@@ -1,32 +1,23 @@
-import buildDiff from './build-diff.js';
-import stylish from './formatters/stylish.js';
-import plain from './formatters/plain.js';
-import json from './formatters/json.js';
-import parse from './file-parser.js';
-import { readFile, getFileFormat } from './file-reader.js';
+import path from 'path';
+import fs from 'fs';
+import compareObjects from './compare-objects.js';
+import format from './formatters/index.js';
+import parse from './parser.js';
+
+const readFile = (filepath) => {
+  const absolutePath = path.resolve(process.cwd(), filepath);
+  return fs.readFileSync(absolutePath, 'utf-8');
+};
+
+const getFileFormat = (filepath) => path.extname(filepath).slice(1);
+
+const getData = (filepath) => parse(readFile(filepath), getFileFormat(filepath));
 
 const genDiff = (filepath1, filepath2, formatName = 'stylish') => {
-  const formatters = {
-    stylish,
-    plain,
-    json,
-  };
-
-  if (!formatters[formatName]) {
-    throw new Error(`Unsupported format: ${formatName}`);
-  }
-
-  const getData = (filepath) => {
-    const content = readFile(filepath);
-    const format = getFileFormat(filepath);
-    return parse(content, format);
-  };
-
   const data1 = getData(filepath1);
   const data2 = getData(filepath2);
-
-  const diffTree = buildDiff(data1, data2);
-  return formatters[formatName](diffTree);
+  const result = compareObjects(data1, data2);
+  return format(result, formatName);
 };
 
 export default genDiff;
