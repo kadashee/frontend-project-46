@@ -12,7 +12,7 @@ const buildDiff = (data1, data2) => {
       return { key, type: 'added', value: data2[key] };
     }
     if (_.isObject(data1[key]) && _.isObject(data2[key])) {
-      return { key, type: 'nested', children: compareObjects(data1[key], data2[key]) };
+      return { key, type: 'nested', children: buildDiff(data1[key], data2[key]) };
     }
     if (!_.isEqual(data1[key], data2[key])) {
       return {

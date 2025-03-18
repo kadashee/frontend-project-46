@@ -14,7 +14,7 @@ const stringify = (value, depth) => {
   const bracketIndent = getBracketSpaces(depth);
 
   const lines = Object.entries(value).map(
-      ([key, val]) => `${indent}${key}: ${stringify(val, depth + 1)}`,
+    ([key, val]) => `${indent}${key}: ${stringify(val, depth + 1)}`,
   );
 
   return `{\n${lines.join('\n')}\n${bracketIndent}}`;
