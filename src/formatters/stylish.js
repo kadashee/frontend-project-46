@@ -1,30 +1,27 @@
 import _ from 'lodash';
 
+const spacesCount = 4;
+
+const getSpaces = (depth) => ' '.repeat(depth * spacesCount);
+const getBracketSpaces = (depth) => getSpaces(depth - 1);
+
 const stringify = (value, depth) => {
   if (!_.isObject(value) || value === null) {
-    if (value === null) {
-      return 'null';
-    }
-    if (typeof value === 'string') {
-      return value;
-    }
     return String(value);
   }
 
-  const spacesCount = 4;
-  const indent = ' '.repeat(depth * spacesCount);
-  const bracketIndent = ' '.repeat((depth - 1) * spacesCount);
+  const indent = getSpaces(depth);
+  const bracketIndent = getBracketSpaces(depth);
 
   const lines = Object.entries(value).map(
-    ([key, val]) => `${indent}${key}: ${stringify(val, depth + 1)}`,
+      ([key, val]) => `${indent}${key}: ${stringify(val, depth + 1)}`,
   );
 
   return `{\n${lines.join('\n')}\n${bracketIndent}}`;
 };
 
 const formatStylish = (data, depth = 1) => {
-  const spacesCount = 4;
-  const indent = ' '.repeat((depth - 1) * spacesCount);
+  const indent = getBracketSpaces(depth);
 
   const result = data.map((node) => {
     const { key, type } = node;
@@ -44,7 +41,7 @@ const formatStylish = (data, depth = 1) => {
           `${indent}  + ${key}: ${stringify(node.value2, depth + 1)}`,
         ].join('\n');
       default:
-        throw new Error(`Неизвестный тип узла: ${type}`);
+        throw new Error(`Unknown node type: ${type}`);
     }
   });
   return `{\n${result.join('\n')}\n${indent}}`;

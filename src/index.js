@@ -1,6 +1,6 @@
 import path from 'path';
 import fs from 'fs';
-import compareObjects from './compare-objects.js';
+import buildDiff from './build-diff.js';
 import format from './formatters/index.js';
 import parse from './parser.js';
 
@@ -16,8 +16,8 @@ const getData = (filepath) => parse(readFile(filepath), getFileFormat(filepath))
 const genDiff = (filepath1, filepath2, formatName = 'stylish') => {
   const data1 = getData(filepath1);
   const data2 = getData(filepath2);
-  const result = compareObjects(data1, data2);
-  return format(result, formatName);
+  const diff = buildDiff(data1, data2);
+  return format(diff, formatName);
 };
 
 export default genDiff;

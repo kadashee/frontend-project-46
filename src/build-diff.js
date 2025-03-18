@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-const compareObjects = (data1, data2) => {
+const buildDiff = (data1, data2) => {
   const keys = _.union(Object.keys(data1), Object.keys(data2));
   const sortedKeys = _.sortBy(keys);
 
@@ -27,4 +27,4 @@ const compareObjects = (data1, data2) => {
   });
 };
 
-export default compareObjects;
+export default buildDiff;
